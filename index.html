@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>傳統七大脈輪對比表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .chakras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .chakra-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chakra-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .chakra-header {
+            padding: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chakra-symbol {
+            font-size: 2.5em;
+        }
+
+        .chakra-title-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .chakra-theme {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .chakra-content {
+            padding: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .chakra-card.expanded .chakra-content {
+            max-height: 2000px;
+        }
+
+        .chakra-core {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .chakra-core-label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        .chakra-core-text {
+            color: #666;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .topics {
+            margin-top: 20px;
+        }
+
+        .topic {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .topic:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .topic-number {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+
+        .topic-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .topic-item {
+            display: flex;
+            gap: 12px;
+        }
+
+        .topic-label {
+            font-weight: 600;
+            color: #555;
+            min-width: 80px;
+            font-size: 0.85em;
+        }
+
+        .topic-text {
+            color: #666;
+            line-height: 1.6;
+            flex: 1;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .toggle-btn {
+            width: 100%;
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1em;
+        }
+
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .chakra-card.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .chakras-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .topic-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .topic-label {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 傳統七大脈輪對比表</h1>
+            <p>西方基督哲學 × New Age吸引力法則 × 量子力學 × 佛學 × 易學</p>
+        </div>
+
+        <div class="chakras-grid">
+            <!-- 根輪 -->
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">⭕</span>
+                        <div class="chakra-title-section">
+                            <h2>根輪</h2>
+                            <div class="chakra-theme">個人療癒</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #E74C3C; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">核心範疇</div>
+                        <div class="chakra-core-text">生存
+安全感
+金錢恐懼
+創傷療癒</div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <div class="topic-number">1. 宇宙起源與創造</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">萬物由上帝創造，
+有目的與秩序</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">宇宙是能量與振動構成的顯現場</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">量子場為. 非物質的信息潛能場，萬物的源頭</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">無始無終，空性緣起，心識顯現</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">太極生兩儀，陰陽互根，無極而太極</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-number">2. 身體與思想影響</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">身體是神殿</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">思想影響能量場、健康、人際</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">意念與感受改變基因表現與
+蛋白質合成</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">身心觀空，五蘊無我</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">形神一體，心境影響氣血</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 臍輪 -->
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">✴️</span>
+                        <div class="chakra-title-section">
+                            <h2>臍輪</h2>
+                            <div class="chakra-theme">振動顯化</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #E67E22; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">核心範疇</div>
+                        <div class="chakra-core-text">創造豐盛
+情感
+能量
+吸引力</div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <div class="topic-number">3. 自由意志與選擇</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">人可選擇善惡，
+決定命運走向</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">個人意識吸引結果</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">意識改變觀察結果</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">業力相續，自業自受</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">人在天命中仍有變通之機，隨時可變</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-number">4. 幸福與圓滿</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">順服神意得平安</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">越高頻共振 → 回饋越正向</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">內在振動越高，
+外在越能顯化良善實相</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">滅苦得涅槃</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">安命樂天，中和達觀</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 太陽神經叢 -->
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🌞</span>
+                        <div class="chakra-title-section">
+                            <h2>太陽神經叢</h2>
+                            <div class="chakra-theme">集體轉化</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #F1C40F; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">核心範疇</div>
+                        <div class="chakra-core-text">意志力
+行動
+責任感</div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <div class="topic-number">5. 原罪 / 業力 / 因果</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">遺落神性，罪需救贖</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">負面信念
+吸引負面結果</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">遺傳 / 環境交互作用 (長期低頻信號穩固負面迴路與生理毒性)</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">三世因果，業報必然</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">吉凶悔吝，陰陽互化，變易無常</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-number">6. 轉化與重生</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">重生得永生</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">調整內在頻率 → 改寫人生劇本</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">大腦可塑性使預演重組實相 → 從內轉化外境</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">解脫成佛，輪迴止息</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">從變化中生新，剝極而復</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 心輪 -->
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">💚</span>
+                        <div class="chakra-title-section">
+                            <h2>心輪</h2>
+                            <div class="chakra-theme">教育社會改造</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #27AE60; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">核心範疇</div>
+                        <div class="chakra-core-text">愛
+慈悲共融</div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <div class="topic-number">7. 信仰與敬畏</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">信靠上帝得救</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">誠信、感恩 → 吸引喜悅與豐盛</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">積極思想+感受 → 強電磁訊號影響量子塌縮
+(宇宙有秩序可敬)</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">皈依三寶，敬法尊僧</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">敬天知命，順天而行</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-number">8.教育社會改造</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">愛人如己</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">愛的頻率最高</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">情感影響實相</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">菩薩行，慈悲心是最高智慧</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">天地合德</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 喉輪 -->
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🔊</span>
+                        <div class="chakra-title-section">
+                            <h2>喉輪</h2>
+                            <div class="chakra-theme">當下覺醒</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #3498DB; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">核心範疇</div>
+                        <div class="chakra-core-text">真理
+表達溝通</div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <div class="topic-number">9.當下覺醒</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">靜默祈禱</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">臨在的力量</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">當下決定觀測</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">觀身觀心</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">易變通不息</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-number">10. 無常與虛空</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">永恆不變的神</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">一切皆可改變</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">不確定性本質</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">諸行無常，諸法空性</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">易無常，萬物變化莫測</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 眉心輪 -->
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🧿</span>
+                        <div class="chakra-title-section">
+                            <h2>眉心輪</h2>
+                            <div class="chakra-theme">意識進化</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #8E44AD; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">核心範疇</div>
+                        <div class="chakra-core-text">洞察
+直覺智慧</div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <div class="topic-number">11.意識進化</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">靈魂永存</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">靈魂多世演化</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">潛在可能性</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">阿賴耶識</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">精氣為物</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-number">12. 靈魂與意識持續性</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">靈魂永存天堂地獄</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">靈魂經多世演化
+回歸本體</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">意識超越時空，
+可能存在於量子場中</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">阿賴耶識流轉六道</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">靈魂隨氣運循環化生</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 頂輪 -->
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🔮</span>
+                        <div class="chakra-title-section">
+                            <h2>頂輪</h2>
+                            <div class="chakra-theme">真我實現</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #9B59B6; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">核心範疇</div>
+                        <div class="chakra-core-text">圓滿
+神聖合一
+空性體驗</div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <div class="topic-number">13.真我實現</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">完全像天父</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">一體合一</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">一切皆有可能</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">佛性本具</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">道法自然</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-number">14. 終極實相與圓滿</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">西方基督哲學</span>
+                                    <span class="topic-text">上帝絕對圓滿</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">覺醒合一</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">量子力學</span>
+                                    <span class="topic-text">無限可能性場</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">佛學</span>
+                                    <span class="topic-text">法界真如，圓滿覺性</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">易學</span>
+                                    <span class="topic-text">道無所不在，圓通自然</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleChakra(button) {
+            const card = button.closest('.chakra-card');
+            card.classList.toggle('expanded');
+        }
+
+        // 支持 PostMessage 響應式 iframe
+        function sendHeightToParent() {
+            const height = document.documentElement.scrollHeight;
+            window.parent.postMessage({
+                type: 'setHeight',
+                value: height
+            }, '*');
+        }
+
+        // 初始化時發送高度
+        window.addEventListener('load', sendHeightToParent);
+        // 每當內容變化時發送高度
+        const observer = new MutationObserver(sendHeightToParent);
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true
+        });
+    </script>
+</body>
+</html>
