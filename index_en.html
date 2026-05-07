@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Traditional Chakras Comparison Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .chakras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .chakra-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chakra-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .chakra-header {
+            padding: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chakra-symbol {
+            font-size: 2.5em;
+        }
+
+        .chakra-title-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .chakra-theme {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .chakra-content {
+            padding: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .chakra-card.expanded .chakra-content {
+            max-height: 2000px;
+        }
+
+        .chakra-core {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .chakra-core-label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        .chakra-core-text {
+            color: #666;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .topics {
+            margin-top: 20px;
+        }
+
+        .topic {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .topic:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .topic-number {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+
+        .topic-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .topic-item {
+            display: flex;
+            gap: 12px;
+        }
+
+        .topic-label {
+            font-weight: 600;
+            color: #555;
+            min-width: 100px;
+            font-size: 0.85em;
+        }
+
+        .topic-text {
+            color: #666;
+            line-height: 1.6;
+            flex: 1;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .toggle-btn {
+            width: 100%;
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1em;
+        }
+
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .chakra-card.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .chakras-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .topic-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .topic-label {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Seven Traditional Chakras Comparison Table</h1>
+            <p>Western Christian Philosophy × New Age Law of Attraction × Quantum Mechanics × Buddhism × I Ching / Taoism</p>
+        </div>
+
+        <div class="chakras-grid">
+
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">⭕</span>
+                        <div class="chakra-title-section">
+                            <h2>Root Chakra</h2>
+                            <div class="chakra-theme">Personal Healing</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #E74C3C; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">Core Themes</div>
+                        <div class="chakra-core-text">Survival, Security, Financial Fear, Trauma Healing</div>
+                    </div>
+                    <div class="topics">
+
+                        <div class="topic">
+                            <div class="topic-number">1. 宇宙起源與創造</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">All things are created by God with purpose and order</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">The universe is a manifestation field composed of energy and vibration</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Quantum field is a non-material information potential field, the source of all things</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Without beginning or end, emptiness dependent origination, manifestation of consciousness</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Tai Chi generates two principles, yin and yang are mutually rooted, from non-polarity comes Tai Chi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <div class="topic-number">2. 身體與思想影響</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">The body is a temple</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Thoughts influence energy fields, health, and relationships</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Thoughts and feelings change gene expression and protein synthesis</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Body and mind are empty, five aggregates are non-self</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Form and spirit are one, mind and environment influence qi and blood</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">✴️</span>
+                        <div class="chakra-title-section">
+                            <h2>Sacral Chakra</h2>
+                            <div class="chakra-theme">Vibrational Manifestation</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #E67E22; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">Core Themes</div>
+                        <div class="chakra-core-text">Creation, Abundance, Emotion, Energy, Attraction</div>
+                    </div>
+                    <div class="topics">
+
+                        <div class="topic">
+                            <div class="topic-number">3. 自由意志與選擇</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Humans can choose between good and evil, determining their destiny</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Personal consciousness attracts results</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">意識改變觀察結果</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Karma continues, you reap what you sow</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Within heaven's mandate, there is still room for change, transformation is always possible</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <div class="topic-number">4. 幸福與圓滿</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Peace comes from surrendering to God's will</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Higher frequency vibration → More positive feedback</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">The higher the inner vibration, the more good reality manifests externally</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">End suffering, attain nirvana</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Accept fate and find joy in heaven, achieve harmony and equanimity</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🌞</span>
+                        <div class="chakra-title-section">
+                            <h2>Solar Plexus Chakra</h2>
+                            <div class="chakra-theme">Collective Transformation</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #F1C40F; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">Core Themes</div>
+                        <div class="chakra-core-text">Willpower, Action, Responsibility</div>
+                    </div>
+                    <div class="topics">
+
+                        <div class="topic">
+                            <div class="topic-number">5. 原罪 / 業力 / 因果</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Fallen divinity, sin requires redemption</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Negative beliefs attract negative results</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Genetic/environmental interaction (long-term low-frequency signals stabilize negative loops and physiological toxicity)</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Karma across three lifetimes, karmic retribution is inevitable</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Fortune and misfortune, regret and shame, yin and yang transform, change is constant</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <div class="topic-number">6. 轉化與重生</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Rebirth brings eternal life</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Adjust inner frequency → Rewrite your life script</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Brain plasticity allows rehearsal to reorganize reality → Transform external circumstances from within</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Liberation and Buddhahood, cessation of samsara</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Create anew from change, from extreme diminishment comes restoration</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">💚</span>
+                        <div class="chakra-title-section">
+                            <h2>Heart Chakra</h2>
+                            <div class="chakra-theme">Education & Social Transformation</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #27AE60; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">Core Themes</div>
+                        <div class="chakra-core-text">Love, Compassion, Unity</div>
+                    </div>
+                    <div class="topics">
+
+                        <div class="topic">
+                            <div class="topic-number">7. 信仰與敬畏</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Salvation through trust in God</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Integrity and gratitude → Attract joy and abundance</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Positive thoughts + feelings → Strong electromagnetic signals influence quantum collapse (universe has orderly structure worthy of reverence)</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Take refuge in the Three Jewels, respect the Dharma and honor the Sangha</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Revere heaven and know your destiny, act in accordance with heaven</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <div class="topic-number">8.教育社會改造</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Love your neighbor as yourself</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Love has the highest frequency</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">情感影響實相</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Bodhisattva path, compassion is the highest wisdom</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Align with the virtue of heaven and earth</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🔊</span>
+                        <div class="chakra-title-section">
+                            <h2>Throat Chakra</h2>
+                            <div class="chakra-theme">Present Moment Awakening</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #3498DB; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">Core Themes</div>
+                        <div class="chakra-core-text">Truth, Expression, Communication</div>
+                    </div>
+                    <div class="topics">
+
+                        <div class="topic">
+                            <div class="topic-number">9.當下覺醒</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Silent prayer</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">The power of presence</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Present moment determines observation</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Observe body and mind</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Change and adaptation never cease</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <div class="topic-number">10. 無常與虛空</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">The eternal and unchanging God</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Everything can change</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Uncertainty principle</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">All conditioned things are impermanent, all phenomena are empty</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Change is constant, transformations of myriad things are unpredictable</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🧿</span>
+                        <div class="chakra-title-section">
+                            <h2>Third Eye Chakra</h2>
+                            <div class="chakra-theme">Consciousness Evolution</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #8E44AD; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">Core Themes</div>
+                        <div class="chakra-core-text">Insight, Intuitive Wisdom</div>
+                    </div>
+                    <div class="topics">
+
+                        <div class="topic">
+                            <div class="topic-number">11.意識進化</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">The soul is eternal</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Soul evolves through multiple lifetimes</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Potential possibilities</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Alaya consciousness</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Refined qi becomes form</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <div class="topic-number">12. 靈魂與意識持續性</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">The soul is eternal in heaven or hell</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Soul evolves through multiple lifetimes and returns to essence</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Consciousness transcends space-time and may exist in the quantum field</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Alaya consciousness flows through six realms</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">Soul cycles through qi circulation and transformation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="chakra-card expanded">
+                <button class="toggle-btn" onclick="toggleChakra(this)">
+                    <div class="chakra-header" style="flex: 1; color: white;">
+                        <span class="chakra-symbol">🔮</span>
+                        <div class="chakra-title-section">
+                            <h2>Crown Chakra</h2>
+                            <div class="chakra-theme">Self-Realization</div>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="chakra-header" style="background-color: #9B59B6; padding: 0;"></div>
+                <div class="chakra-content">
+                    <div class="chakra-core">
+                        <div class="chakra-core-label">Core Themes</div>
+                        <div class="chakra-core-text">Completeness, Sacred Union, Experience of Emptiness</div>
+                    </div>
+                    <div class="topics">
+
+                        <div class="topic">
+                            <div class="topic-number">13.真我實現</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">Be perfect as your heavenly Father is perfect</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Unity consciousness</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">All things are possible</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Buddha-nature is inherent</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">The Way follows nature</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <div class="topic-number">14. 終極實相與圓滿</div>
+                            <div class="topic-content">
+                                <div class="topic-item">
+                                    <span class="topic-label">Western Christian</span>
+                                    <span class="topic-text">God is absolutely perfect</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">New Age</span>
+                                    <span class="topic-text">Awakening to unity</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Quantum</span>
+                                    <span class="topic-text">Field of infinite possibilities</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">Buddhism</span>
+                                    <span class="topic-text">Dharma realm suchness, perfect enlightenment</span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="topic-label">I Ching</span>
+                                    <span class="topic-text">The Way is everywhere, perfectly pervades nature</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleChakra(button) {
+            const card = button.closest('.chakra-card');
+            card.classList.toggle('expanded');
+        }
+
+        // Support PostMessage for responsive iframe embedding
+        function sendHeightToParent() {
+            const height = document.documentElement.scrollHeight;
+            window.parent.postMessage({
+                type: 'setHeight',
+                value: height
+            }, '*');
+        }
+
+        // Send height on load
+        window.addEventListener('load', sendHeightToParent);
+        // Send height on content changes
+        const observer = new MutationObserver(sendHeightToParent);
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true
+        });
+    </script>
+</body>
+</html>
